@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-echo $@
+app_url="https://crater.myterminal.me"
+
+# TODO: Implement a switch, execute the appropriate command
+/bin/bash -c "$(curl -s ${app_url}/list-sources)"
