@@ -1,0 +1,38 @@
+.\" Manpage for crater.
+.\" Contact Mohammed Ismail Ansari <team.terminal@gmail.com> to correct errors or typos.
+.TH crater 1 "07/01/2023" "0.1.0"
+.SH NAME
+crater \- A super-lightweight, universal, "meta" package manager for UNIX-like platforms
+.SH SYNOPSIS
+.B crater
+\fISUBCOMMAND\fR
+[\fIARG\fR]
+.SH DESCRIPTION
+.B crater
+generates and executes shell scripts for various package management tasks.
+.SH SUBCOMMANDS
+.TP
+.BR help, -h, --help
+Prints this message.
+.TP
+.BR version, -v, --version
+Prints the version number of crater.
+.TP
+.BR search " " \fIterm\fR
+Searches for packages matching \fIterm\fR across all available known packages sources.
+.TP
+.BR list
+Lists all available packages through known package sources.
+.TP
+.BR install " " \fI[package1]\fR " " \fI[package2]\fR " " ...
+Installs packages through available known package sources.
+.TP
+.BR uninstall " " \fIpackage\fR
+Uninstall packages.
+.TP
+.BR update " " \fI[package1]\fR " " \fI[package2]\fR " " ...
+Updates all (or specified) packages through the appropriate available package sources.
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Mohammed Ismail Ansari (team.terminal@gmail.com)
