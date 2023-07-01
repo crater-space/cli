@@ -13,55 +13,27 @@ help:
 	@echo " - update"
 
 primary-deps:
-	@echo "Making sure SBCL is installed..."
-ifneq ($(shell command -v sbcl),)
-	@echo "SBCL found."
-else ifneq ($(shell command -v xbps-query),)
-	sudo xbps-install -Syu sbcl
-else ifneq ($(shell command -v pacman),)
-	sudo pacman -Sy sbcl
-else ifneq ($(shell command -v dnf),)
-	sudo dnf install -y sbcl
-else ifneq ($(shell command -v apt),)
-	sudo apt install -y sbcl
+	@echo "Making sure 'curl' is installed..."
+ifneq ($(shell command -v curl),)
+	@echo "'curl' found."
 else
-	@echo "Could not determine steps to install SBCL! Please install SBCL and try again."
-	exit 1
-endif
-	@echo "Looking for external dependencies..."
-ifeq ($(shell command -v xrandr),)
-	@echo "'xrandr' not found!"
+	@echo "'curl' not found! Please install it manually and try again."
 	exit 1
 endif
 	@echo "All required dependencies found."
 
-quicklisp:
-ifeq ("$(wildcard $(QUICKLISP_DIR))", "")
-	@echo "Setting up Quicklisp..."
-	curl https://beta.quicklisp.org/quicklisp.lisp -o /tmp/quicklisp.lisp
-	sbcl --load /tmp/quicklisp.lisp --non-interactive --eval "(quicklisp-quickstart:install)"
-	sbcl --load ~/quicklisp/setup.lisp --non-interactive --eval "(ql:add-to-init-file)"
-else
-	@echo "Quicklisp found."
-endif
-
-binary:
-	@echo "Generating binary..."
-	sbcl --non-interactive --load build.lisp
-	@echo "Binary generated."
-
 place:
-	@echo "Installing binary..."
-	sudo install ./crater-bin $(PREFIX)/bin/crater
+	@echo "Installing script..."
+	sudo install ./crater $(PREFIX)/bin/crater
 	sudo install ./scripts/* $(PREFIX)/bin/
-	@echo "Binary installed."
+	@echo "Script installed."
 
 manpage:
 	@echo "Creating manpage..."
 	sudo rsync ./man/crater.1 $(MANPREFIX)/man1/
 	@echo "Manpage created."
 
-install: primary-deps quicklisp binary place manpage
+install: primary-deps place manpage
 	@echo "crater is now installed."
 
 uninstall:
