@@ -1,5 +1,9 @@
 # crater-cli
 
+[![js-myterminal-style](https://img.shields.io/badge/code%20style-myterminal-blue.svg)](https://www.npmjs.com/package/eslint-config-myterminal)
+[![License](https://img.shields.io/github/license/crater-space/cli.svg)](https://opensource.org/licenses/MIT)  
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Y8Y5E5GL7)
+
 A super-lightweight, universal, "meta" package manager for UNIX-like platforms
 
 ## Major commands
