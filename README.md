@@ -14,12 +14,33 @@ A super-lightweight, universal, "meta" package manager for UNIX-like platforms
 4. `uninstall` packages
 5. `update` all (or specified) packages through the appropriate available package sources
 
-## How to install
+For more information about the available commands, refer to the manpage.
+
+    man crater
+
+## Installation
+
+There are at least two ways to install *crater*.
+
+### Compile from source
+
+    # Clone project to the local workspace
+    git clone https://github.com/crater-space/cli.git crater-cli
+
+    # Switch to the project directory
+    cd crater-cli
+
+    # Install with `make`
+    make install
+
+### Automatic installation
+
+Simply execute the below command in a terminal and the rest should be automatic.
+
+    /bin/bash -c "$(curl https://raw.githubusercontent.com/crater-space/cli/main/install)"
 
 ## Dependencies
 
 *Crater* has been written entirely as a shell script, and that helps keep it as lightweight as possible with almost no external dependency except [curl](https://curl.se) and also makes it available on almost all UNIX-like platforms.
-
-You'll need to install *Curl* before using *Crater*.
 
 More documentation coming soon...
