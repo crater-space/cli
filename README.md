@@ -18,6 +18,8 @@ A super-lightweight, universal, "meta" package manager for UNIX-like platforms
 
 ## Dependencies
 
-*Crater* has been written entirely as a shell script, and that helps keep it as lightweight as possible with no external dependency and also makes it available on almost all UNIX-like platforms.
+*Crater* has been written entirely as a shell script, and that helps keep it as lightweight as possible with almost no external dependency except [curl](https://curl.se) and also makes it available on almost all UNIX-like platforms.
+
+You'll need to install *Curl* before using *Crater*.
 
 More documentation coming soon...
