@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+git clone https://github.com/crater-space/cli /tmp/crater-cli
+(cd /tmp/crater-cli; make uninstall)
+rm -rf /tmp/crater-cli
