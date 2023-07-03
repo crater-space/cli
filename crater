@@ -6,10 +6,6 @@ command_name=${1}
 arguments=${@:2}
 
 case ${command_name} in
-    help | --help | -h)
-        echo "Help not Implemented!"
-        ;;
-
     version | --version | -v)
         echo "Search not Implemented!"
         ;;
