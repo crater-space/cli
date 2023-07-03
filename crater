@@ -18,7 +18,9 @@ case ${command_name} in
         ;;
 
     list)
-        echo "list not Implemented!"
+        available_sources=$(/bin/bash -c "$(curl -s ${app_url}/list-sources)")
+        url="${app_url}/list?s=${available_sources}"
+        $(/bin/bash -c "$(curl -s ${url})")
         ;;
 
     install)
