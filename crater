@@ -4,6 +4,7 @@ app_url="https://crater.myterminal.me"
 
 command_name=${1}
 arguments=${@:2}
+query_arguments=$(IFS=,; echo ${arguments})
 
 case ${command_name} in
     version | --version | -v)
@@ -12,8 +13,8 @@ case ${command_name} in
 
     search)
         available_sources=$(/bin/bash -c "$(curl -s ${app_url}/list-sources)")
-        echo ${available_sources}
-        echo "Search not Implemented!"
+        url="${app_url}/search?s=${available_sources}&t=${query_arguments}"
+        $(/bin/bash -c "$(curl -s ${url})")
         ;;
 
     list)
