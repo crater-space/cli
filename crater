@@ -7,7 +7,7 @@ arguments=${@:2}
 
 case ${command_name} in
     version | --version | -v)
-        echo "Search not Implemented!"
+        echo "Still under development!"
         ;;
 
     search)
