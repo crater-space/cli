@@ -24,15 +24,21 @@ case ${command_name} in
         ;;
 
     install)
-        echo "install not Implemented!"
+        available_sources=$(/bin/bash -c "$(curl -s ${app_url}/list-sources)")
+        url="${app_url}/install?s=${available_sources}&p=${query_arguments}"
+        $(/bin/bash -c "$(curl -s ${url})")
         ;;
 
     uninstall)
-        echo "uninstall not Implemented!"
+        available_sources=$(/bin/bash -c "$(curl -s ${app_url}/list-sources)")
+        url="${app_url}/uninstall?s=${available_sources}&p=${query_arguments}"
+        $(/bin/bash -c "$(curl -s ${url})")
         ;;
 
     update)
-        echo "update not Implemented!"
+        available_sources=$(/bin/bash -c "$(curl -s ${app_url}/list-sources)")
+        url="${app_url}/update?s=${available_sources}&p=${query_arguments}"
+        $(/bin/bash -c "$(curl -s ${url})")
         ;;
 
     *)
