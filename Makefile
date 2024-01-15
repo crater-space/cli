@@ -31,7 +31,7 @@ place:
 manpage:
 	@echo "Creating manpage..."
 	mkdir -p $(MANPREFIX)
-	sudo rsync ./man/crater.1 $(MANPREFIX)/man1/
+	sudo cp ./man/crater.1 $(MANPREFIX)/man1/
 	@echo "Manpage created."
 
 install: primary-deps place manpage
