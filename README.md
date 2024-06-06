@@ -49,6 +49,10 @@ OR, the shorter one shown below:
 
     /bin/bash -c "$(curl https://raw.githubusercontent.com/crater-space/cli/master/fetch)" _ btop
 
+OR, you can use the shorter version:
+
+    /bin/bash -c "$(curl https://crater.myterminal.me/fetch)" _ btop
+
 The above example would install "btop" without installing *crater* on the system.
 
 
