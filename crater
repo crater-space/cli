@@ -3,8 +3,6 @@
 app_url="https://crater.myterminal.me"
 
 command_name=${1}
-arguments=${@:2}
-query_arguments=$(IFS=,; echo ${arguments})
 
 case ${command_name} in
     version | --version | -v)
@@ -13,7 +11,8 @@ case ${command_name} in
 
     search)
         available_sources=$(/bin/bash -c "$(curl -s ${app_url}/list-sources)")
-        url="${app_url}/search?s=${available_sources}&t=${query_arguments}"
+        search_term=${2}
+        url="${app_url}/search?s=${available_sources}&t=${search_term}"
         /bin/bash -c "$(curl -s ${url})"
         ;;
 
@@ -25,19 +24,25 @@ case ${command_name} in
 
     install)
         available_sources=$(/bin/bash -c "$(curl -s ${app_url}/list-sources)")
-        url="${app_url}/install?s=${available_sources}&p=${query_arguments}"
+        arguments=${@:2}
+        package_names=$(echo ${arguments} | tr ' ' ',')
+        url="${app_url}/install?s=${available_sources}&p=${package_names}"
         /bin/bash -c "$(curl -s ${url})"
         ;;
 
     uninstall)
         available_sources=$(/bin/bash -c "$(curl -s ${app_url}/list-sources)")
-        url="${app_url}/uninstall?s=${available_sources}&p=${query_arguments}"
+        arguments=${@:2}
+        package_names=$(echo ${arguments} | tr ' ' ',')
+        url="${app_url}/uninstall?s=${available_sources}&p=${package_names}"
         /bin/bash -c "$(curl -s ${url})"
         ;;
 
     update)
         available_sources=$(/bin/bash -c "$(curl -s ${app_url}/list-sources)")
-        url="${app_url}/update?s=${available_sources}&p=${query_arguments}"
+        arguments=${@:2}
+        package_names=$(echo ${arguments} | tr ' ' ',')
+        url="${app_url}/update?s=${available_sources}&p=${package_names}"
         /bin/bash -c "$(curl -s ${url})"
         ;;
 
