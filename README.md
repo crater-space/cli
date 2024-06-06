@@ -6,13 +6,49 @@
 
 A super-lightweight, universal, "meta" package manager for UNIX-like platforms
 
-## Major commands
+## Commands
 
-1. `search` for packages matching a specified term across all available known package sources
-2. `list` all available packages through known package sources
-3. `install` packages through available known package sources
-4. `uninstall` packages
-5. `update` all (or specified) packages through the appropriate available package sources
+### 1. `search`
+
+Searches for packages matching a specified term across all available known package sources
+
+    crater search emacs
+
+### 2. `list`
+
+Lists all available packages through known package sources
+
+    crater list
+
+### 3. `install`
+
+installs specified packages through available known package sources
+
+    crater install git emacs steam
+
+### 4. `uninstall` (not implemented)
+
+Uninstalls specified packages through the appropriate package sources
+
+    crater uninstall btop steam
+
+### 5. `update` (not implemented)
+
+Updates all (or specified) packages through the appropriate available package sources
+
+    crater update emacs steam
+
+OR
+
+    crater update
+
+## Help
+
+For a list of supported commands, use one of the following:
+
+    crater help
+    crater --help
+    crater -h
 
 For more information about the available commands, refer to the manpage.
 
