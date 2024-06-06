@@ -43,6 +43,15 @@ OR, the shorter one shown below:
 
     /bin/bash -c "$(curl https://crater.myterminal.me/cli)"
 
+## Quick-Usage
+
+*crater* can be used to "fetch" (install) packages with a single command, without even installing *crater*. The only requirement for this is [curl](https://curl.se).
+
+    /bin/bash -c "$(curl https://raw.githubusercontent.com/crater-space/cli/master/fetch)" _ btop
+
+The above example would install "btop" without installing *crater* on the system.
+
+
 ## Dependencies
 
 *Crater* has been written entirely as a shell script, and that helps keep it as lightweight as possible with almost no external dependency except [curl](https://curl.se) and also makes it available on almost all UNIX-like platforms.
