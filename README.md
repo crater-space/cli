@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/github/license/crater-space/cli.svg)](https://opensource.org/licenses/MIT)  
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Y8Y5E5GL7)
 
-The CLI interface for *crater*.
+The CLI interface for *crater*
 
 ## Commands
 
