@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/github/license/crater-space/cli.svg)](https://opensource.org/licenses/MIT)  
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Y8Y5E5GL7)
 
-A super-lightweight, universal, "meta" package manager for UNIX-like platforms
+The CLI interface for *crater*.
 
 ## Commands
 
